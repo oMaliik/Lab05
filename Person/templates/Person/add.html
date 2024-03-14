@@ -1,0 +1,14 @@
+{% extends "Person/layout.html" %}
+
+{% block body %}
+    <div class="container">
+        <h1>Add New Person</h1>
+        <form action="{% url 'Person:add' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{% url 'Person:index' %}">View All People</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "Person/layout.html" %}
+
+{% block body %}
+    <div>
+        <h1>People</h1>
+        <ul>
+            {% for person in people %}
+                <li>{{person}}</li>
+            {% empty %}
+                <li>No people.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'Person:add' %}">Add new person</a>
+    
+    </div>
+{% endblock %}
